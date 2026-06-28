@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Fine Boy ❤️</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Audio -->
+    <audio id="bg-music" loop>
+        <!-- Place your romantic music in the assets folder -->
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+    <button id="mute-btn"><i class="fas fa-volume-mute"></i></button>
+
+    <!-- Three.js Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Loading Screen -->
+    <div id="loading">
+        <div class="heart-loader">❤️</div>
+    </div>
+
+    <!-- Landing Page -->
+    <section id="landing" class="glass-panel">
+        <h1 class="fade-in">Happy Birthday ❤️</h1>
+        <h2 class="fade-in delay-1">Odusanya Oluwaferanmi Israel</h2>
+        <p class="subtitle fade-in delay-2">"My Fine Boy."</p>
+        <button id="gift-btn" class="fade-in delay-3">🎁 Open Your Gift</button>
+    </section>
+
+    <!-- Main Content (Hidden initially) -->
+    <main id="main-content" class="hidden">
+        
+        <!-- Section 1: Love Letter -->
+        <section id="love-letter" class="container" data-aos="fade-up">
+            <div class="glass-card letter-card">
+                <p>Happy birthday to you, my Fine Boy.</p>
+                <p>I love you so very much and I wish you all the good things life has to offer...</p>
+                <p>Including me. ❤️</p>
+                <p>I am so proud of the person you're becoming.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Photo Gallery -->
+        <section id="gallery" class="container">
+            <h2 data-aos="fade-down">Our Beautiful Moments</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1518199266791-5375a83164ba?w=500" alt="Us"></div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=500" alt="Us"></div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=500" alt="Us"></div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300"><img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=500" alt="Us"></div>
+            </div>
+        </section>
+
+        <!-- Section 3: Memory Timeline -->
+        <section id="timeline" class="container">
+            <h2 data-aos="fade-up">Our Story ❤️</h2>
+            <div class="timeline-item glass-card" data-aos="fade-right">
+                <h3>Chapter One</h3>
+                <p>The first day we met... Oh my 😂❤️</p>
+                <p>It was so fun and just the right amount of crazy I needed.</p>
+                <p>Little did I know... I'd meet someone so special.</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Things I Love About You -->
+        <section id="things-i-love" class="container">
+            <h2 data-aos="fade-up">Things I Love About You</h2>
+            <div class="cards-grid">
+                <div class="glass-card" data-aos="flip-left"><i class="fas fa-camera"></i><p>Photography 📷</p></div>
+                <div class="glass-card" data-aos="flip-left" data-aos-delay="100"><i class="fas fa-futbol"></i><p>Manchester City ⚽</p></div>
+                <div class="glass-card" data-aos="flip-left" data-aos-delay="200"><i class="fas fa-pen-nib"></i><p>Writing ✍🏽</p></div>
+                <div class="glass-card" data-aos="flip-left" data-aos-delay="300"><i class="fas fa-smile"></i><p>Your smile 😊</p></div>
+                <div class="glass-card" data-aos="flip-left" data-aos-delay="400"><i class="fas fa-heart"></i><p>The way you love me ❤️</p></div>
+            </div>
+        </section>
+
+        <!-- Section 5: Manchester City -->
+        <section id="man-city" class="container full-height man-city-bg" data-aos="fade-in">
+            <div class="glass-card center-text">
+                <i class="fas fa-futbol bounce"></i>
+                <p>Even when Manchester City stresses you...</p>
+                <p>You'll still support them.</p>
+                <p>I absolutely love that. 💙😂</p>
+            </div>
+        </section>
+
+        <!-- Section 6: Photography -->
+        <section id="photography" class="container full-height" data-aos="fade-in">
+            <div class="glass-card center-text">
+                <i class="fas fa-camera-retro flash"></i>
+                <p>Never stop capturing beautiful moments.</p>
+                <p>May life continue giving you beautiful moments to capture.</p>
+            </div>
+        </section>
+
+        <!-- Section 7: Writing -->
+        <section id="writing" class="container full-height" data-aos="fade-in">
+            <div class="glass-card center-text">
+                <i class="fas fa-book-open pulse"></i>
+                <p class="typewriter">Keep writing.</p>
+                <p>Your words matter.</p>
+                <p>Never stop.</p>
+            </div>
+        </section>
+
+        <!-- Section 8: Digital Bouquet -->
+        <section id="bouquet-section" class="container">
+            <h2 data-aos="fade-up">For You 💐</h2>
+            <div class="bouquet" id="bouquet">
+                <!-- Flowers generated via JS -->
+            </div>
+        </section>
+
+        <!-- Final Section -->
+        <section id="final" class="container full-height dark-fade">
+            <div class="final-text glass-card">
+                <p>Happy Birthday to you, my Fine Boy.</p>
+                <p>I love you so very much.</p>
+                <p>I wish you all the good things life has to offer...</p>
+                <p>Including me. ❤️</p>
+                <p>I am so proud of the person you're becoming.</p>
+                <p>Keep chasing your dreams.</p>
+                <p>Keep writing.</p>
+                <p>Keep taking beautiful pictures.</p>
+                <p>Keep smiling.</p>
+                <p>Keep being exactly who you are.</p>
+                <p>Because that's the person I fell in love with.</p>
+                <h3>Happy Birthday.</h3>
+                <p>I love you forever. ❤️</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Hidden Love Notes (Triggered on scroll) -->
+    <div class="floating-note hidden" id="note-1">I'm proud of you ❤️</div>
+    <div class="floating-note hidden" id="note-2">You're my favourite person.</div>
+    <div class="floating-note hidden" id="note-3">Never stop dreaming.</div>
+    <div class="floating-note hidden" id="note-4">You deserve the world.</div>
+    <div class="floating-note hidden" id="note-5">I love you endlessly.</div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+:root {
+    --primary: #fff0f3;
+    --secondary: #ffccd5;
+    --gold: #d4af37;
+    --text-dark: #2b2b2b;
+    --text-light: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    --mancity-blue: #6CABDD;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--text-dark);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, .typewriter {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-dark);
+}
+
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.glass-card, .glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: var(--glass-shadow);
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 90%;
+}
+
+/* Audio Button */
+#mute-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+    cursor: pointer;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    box-shadow: var(--glass-shadow);
+}
+
+/* Loading */
+#loading {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.heart-loader {
+    font-size: 3rem;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.3); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.3); }
+    70% { transform: scale(1); }
+}
+
+/* Landing */
+#landing {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 600px;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+h2 { font-size: 1.8rem; font-weight: 400; margin-bottom: 1rem; color: var(--gold); }
+.subtitle { font-style: italic; font-size: 1.2rem; margin-bottom: 2rem; }
+
+#gift-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, var(--gold), #ffdf00);
+    border: none;
+    border-radius: 30px;
+    color: var(--text-dark);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    transition: transform 0.3s ease;
+}
+
+#gift-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Layout Utilities */
+.container {
+    padding: 4rem 1rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.full-height {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    box-shadow: var(--glass-shadow);
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Cards Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.cards-grid .glass-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.cards-grid i {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+/* Specific Sections */
+.man-city-bg {
+    background: linear-gradient(135deg, rgba(108, 171, 221, 0.8), rgba(255, 255, 255, 0.5));
+    border-radius: 20px;
+    color: #fff;
+}
+
+.man-city-bg .glass-card {
+    background: rgba(255,255,255,0.2);
+    color: #000;
+}
+
+.bounce { animation: bounce 2s infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+.flash { animation: flash 3s infinite; }
+@keyframes flash { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+.pulse { animation: pulse 2s infinite; }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+/* Digital Bouquet */
+.bouquet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.flower {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50% 50% 50% 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: var(--glass-shadow);
+    transform: scale(0);
+    opacity: 0;
+}
+
+/* Floating Notes */
+.floating-note {
+    position: fixed;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    font-style: italic;
+    z-index: 100;
+    box-shadow: var(--glass-shadow);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+/* Final Section */
+#final {
+    background: #111;
+    color: #fff;
+    transition: background 1s ease;
+}
+
+#final .glass-card {
+    background: rgba(0,0,0,0.4);
+    border-color: rgba(255,255,255,0.1);
+}
+
+#final h3 {
+    color: var(--gold);
+    font-size: 2rem;
+    margin: 1.5rem 0;
+}
+
+/* Typography specifics */
+.letter-card p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.center-text p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Media Queries (Mobile First adjustments for larger screens) */
+@media (min-width: 768px) {
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.2rem; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .glass-card { padding: 3rem; }
+}
